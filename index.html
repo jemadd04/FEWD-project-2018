@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+  <meta name="viewport" content="
+  width=device-width,initial-scale=1, user-scalable=no">
   <meta charset="utf-8">
   <title>James Maddox</title>
   <link rel="stylesheet" href="styles.css">
@@ -16,9 +18,21 @@
         $('nav').removeClass('black')
       }
     })
+    $(document).ready(function() {
+      $(".menu h4").click(function() {
+        $("nav ul").toggleClass("active")
+      })
+    })
   </script>
 </head>
+
 <body>
+  <div class="responsive-bar">
+    <div class="logo">James Maddox</div>
+    <div class="menu">
+      <h4>Menu</h4>
+    </div>
+  </div>
   <div class="wrapper">
     <nav>
       <div class="logo">James Maddox</div>
@@ -29,8 +43,10 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
+
     <img class="headshot rounded" src="headshot4.jpg" alt="headshot">
-    <section class="sec1"></section>
+    <section class="sec1"></section> <!--Background image-->
+
     <section class="content">
       <h1>Who is James?</h1>
       <div class="container">
@@ -45,6 +61,7 @@
         </div>
       </div>
     </section>
+
     <div id="container">
       <form class="form-contact br">
         <h1>Contact Me</h1>
@@ -63,5 +80,9 @@
       </form>
     </div>
   </div>
+
+  <footer class="main-footer">
+    <span>&copy;2018 James Maddox</span>
+  </footer>
 </body>
 </html>

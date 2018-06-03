@@ -4,6 +4,13 @@ body {
   font-family: 'Calibri';
 }
 
+h1 {
+  text-align: center;
+  padding: 0;
+}
+ /* -------Navigation Elements------- */
+
+
 nav {
   position: fixed;
   top: 0;
@@ -12,9 +19,9 @@ nav {
   height: 100px;
   padding: 10px 100px;
   box-sizing: border-box;
-  transition: .5s;
   border-bottom: 1px solid rgba(255,255,255,0.5);
   z-index: 500;
+  transition: .5s;
 }
 
 nav.black {
@@ -45,7 +52,7 @@ nav ul li {
 nav ul li a {
   line-height: 80px;
   color: white;
-  padding: 5px 20px;
+  padding: 10px 20px;
   text-decoration: none;
   text-transform: uppercase;
   transition: .5s;
@@ -57,10 +64,9 @@ nav ul li a:hover {
   background: #f00;
 }
 
-nav ul li a:focus {
-  outline: none;
-}
+/* -------Column Sections------- */
 
+/* Coding background image */
 section.sec1 {
   width: 100%;
   height: 100vh;
@@ -81,21 +87,16 @@ section.content p {
   margin: 10px 0 0;
   padding: 0;
   font-size: 1.1em;
+  text-align: justify;
 }
 
 .column {
   display: table-cell;
   padding: 10px;
   width: 33.33333%;
-  text-align: center;
 }
 
-h1 {
-  text-align: center;
-  padding: 0;
-}
-
-
+/* Headshot Formatting */
 img {
   border: 2px solid #80aab7;
   position: absolute;
@@ -103,6 +104,8 @@ img {
   left: 170px;
   z-index: 0;
 }
+
+/* Form and Footer */
 
 form {
   margin-bottom: 60px;
@@ -130,48 +133,89 @@ label {
   margin-bottom: 0.5em;
 }
 
-@media (max-width: 900px) {
-  .container {
-    margin: 0;
+.responsive-bar {
+  display: none;
+}
+
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+  .responsive-bar {
+    display: block;
+    width: 100%;
+    height: 60px;
+    background: #262626;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    z-index: 501;
+  }
+
+  .responsive-bar .logo {
     padding: 10px;
+    height: 80px;
+    float: left;
+    font-size: 25px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .responsive-bar .menu h4 {
+    float: right;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  nav,
+  nav.black {
+    background: #262626;
+    height: 60px;
+    padding: 0;
+  }
+
+  nav .logo {
+    display: none;
+  }
+
+  nav ul {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    background: #262626;
+    float: none;
+    display: none;
+  }
+
+  nav ul.active {
+    display: block;
+  }
+  nav ul li {
     width: 100%;
   }
 
+  nav ul li a {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 30px !important;
+    color: #fff;
+  }
+}
+
+/*
   .column {
     width: 100%;
     display: block;
     margin: 10px 0;
   }
-}
-
-
-/** ul {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-}
-
-ul li {
-  float: left;
-  width: 200px;
-  height: 40px;
-  background-color: black;
-  opacity: .8;
-  line-height: 40px;
-  text-align: center;
-  font-size: 25px;
-}
-
-ul li a {
-  text-decoration: none;
-  color: white;
-  display: block;
-}
-
-ul li a:hover {
-  background-color: green;
-}
-
-ul li ul li {
-  display: none;
 }
